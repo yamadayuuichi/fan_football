@@ -5,6 +5,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
+    volumes:
+      - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
 
@@ -13,7 +15,11 @@ services:
     command: rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app_name
+      - gem_data:/usr/local/bundle
     ports:
       - "3000:3000"
     links:
       - db
+volumes:
+  mysql_data:
+  gem_data:
