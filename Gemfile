@@ -63,7 +63,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem "haml-rails"
+gem 'erb2haml'
 gem 'materialize-sass'
+gem 'material_icons' 
+gem 'mini_racer'
 
 group :production do
   gem 'unicorn', '5.4.1'
