@@ -72,6 +72,7 @@ gem 'erb2haml'
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons' 
+gem 'kaminari'
 gem 'mini_racer'
 
 group :production do
