@@ -3,7 +3,13 @@
     .nav-wrapper.blue
       = link_to root_path, class: "header-left" do
         サービス
-      = link_to new_user_session_path, class: "header-right" do
-        ログイン
-      = link_to new_user_registration_path, class: "header-right" do
-        登録
+      - if user_signed_in?
+        = link_to root_path, class: "header-right" do
+          投稿する
+        = link_to root_path, class: "header-right" do
+          マイページ
+      - else
+        = link_to new_user_session_path, class: "header-right" do
+          ログイン
+        = link_to new_user_registration_path, class: "header-right" do
+          登録
