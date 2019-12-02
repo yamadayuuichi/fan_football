@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.order("created_at DESC")
   end
 
   def new
@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
   end
 
   def create
-
+    Topic.create(title: topic_params[:title], text: topic_params[:text], user_id: current_user.id)
   end
 
   def show
@@ -28,4 +28,7 @@ class TopicsController < ApplicationController
   end
 
   private
+  def topic_params
+    params.permit(:title, :text)
+  end
 end
