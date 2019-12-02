@@ -8,6 +8,8 @@
           投稿する
         = link_to root_path, class: "header-right" do
           マイページ
+        = link_to destroy_user_session_path, method: :delete, class: "header-right" do
+          ログアウト
       - else
         = link_to new_user_session_path, class: "header-right" do
           ログイン
