@@ -31,4 +31,8 @@ class TopicsController < ApplicationController
   def topic_params
     params.permit(:title, :text)
   end
+
+  def id_params
+    params.permit(:id)
+  end
 end
