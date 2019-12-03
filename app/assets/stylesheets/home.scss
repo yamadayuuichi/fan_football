@@ -3,5 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home{
-  color: red;
+  background: asset-url("football-4505650_1920.jpg") ;
+  background-size:cover;
+  background-position: center 60%;
+  width: 100%;
+}
+
+.cantainer{
+  width: 100%;
 }
