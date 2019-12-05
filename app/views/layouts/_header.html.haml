@@ -2,4 +2,16 @@
   %nav
     .nav-wrapper.blue
       = link_to root_path, class: "header-left" do
-        アプリ
+        海外サッカー情報
+      - if user_signed_in?
+        = link_to root_path, class: "header-right" do
+          投稿する
+        = link_to root_path, class: "header-right" do
+          マイページ
+        = link_to destroy_user_session_path, method: :delete, class: "header-right" do
+          ログアウト
+      - else
+        = link_to new_user_session_path, class: "header-right" do
+          ログイン
+        = link_to new_user_registration_path, class: "header-right" do
+          登録

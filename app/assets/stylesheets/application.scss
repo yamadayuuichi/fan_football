@@ -16,5 +16,10 @@
  */
 
 @import "materialize";
+@import "./config/reset";
 @import './modules/header';
 @import './modules/footer';
+
+body{
+  background-color: rgb(245, 245, 245);
+}

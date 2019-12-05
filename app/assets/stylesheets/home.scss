@@ -3,5 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home{
-  color: red;
+  background: asset-url("football-4505650_1920.jpg") center no-repeat;
+  background-size: cover;
+  background-position: center 50%;
+  height: 550px;
+  margin-top: 4rem;
+}
+
+.cantainer{
+  margin: 0 auto;
+}
+
+.head-line{
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+  padding-top: 30px;
+}
+
+.btn-registration{
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
 }
