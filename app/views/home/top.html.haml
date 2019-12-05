@@ -1,6 +1,13 @@
 .home
   .container
     .head-line
-      = link_to root_path, class: "" do
+      = link_to root_path, class: "white-text" do
         海外サッカー情報板
+.row
+  .offset-s3.col.s2
+    = link_to '新規登録', new_user_registration_path, class: 'btn btn-registration'
+  .col.s2
+    = link_to 'ログイン', new_user_registration_path, class: 'btn btn-registration'
+  .col.s2
+    = link_to 'Twitterログイン', new_user_registration_path, class: 'btn btn-registration'
   
