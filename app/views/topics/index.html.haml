@@ -1,4 +1,6 @@
 .topics-wrapper
   .topics
     - @topics.each do |topic|
-      = topic.title
+      .topic
+        = topic.title
+  = paginate(@topics)
