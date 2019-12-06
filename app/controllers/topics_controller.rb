@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @topics = Topic.order("created_at DESC").page(params[:page]).per(5)
+    @topics = Topic.order("created_at DESC").page(params[:page]).per(50)
   end
 
   def new
