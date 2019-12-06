@@ -28,17 +28,18 @@ class TopicsController < ApplicationController
 
   def update
     topic = Topic.find(params[:id])
-    topic.update(topic_params)
+    topic.update(topic_params) if topic.user_id == current_user.id
     if topic.save
       redirect_to topics_path
     else
       redirect_to edit_topic_path
     end
-
   end
 
-  def destory
-
+  def destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy if @topic.user_id == current_user.id
+    redirect_to topics_path
   end
 
   private
