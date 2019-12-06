@@ -20,6 +20,16 @@
 @import './modules/header';
 @import './modules/footer';
 
-body{
+body,html{
   background-color: rgb(245, 245, 245);
 }
+
+.margin-top{
+  margin-top: 4rem;
+}
+
+.margin-0auto{
+  margin: 0 auto;
+  width: 60%;
+}
+
