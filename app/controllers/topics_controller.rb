@@ -10,8 +10,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(topic_params)
-    if @topic.save
+    topic = Topic.new(topic_params)
+    if topic.save
       redirect_to topics_path
     else
       redirect_to new_topic_path
@@ -23,10 +23,17 @@ class TopicsController < ApplicationController
   end
 
   def edit
-
+    @topic = Topic.find(params[:id])
   end
 
   def update
+    topic = Topic.find(params[:id])
+    topic.update(topic_params)
+    if topic.save
+      redirect_to topics_path
+    else
+      redirect_to edit_topic_path
+    end
 
   end
 
