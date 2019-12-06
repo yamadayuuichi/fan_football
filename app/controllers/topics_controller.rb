@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def new
-
+    @topic = Topic.new
   end
 
   def create
@@ -37,7 +37,7 @@ class TopicsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-  
+
   def id_params
     params.permit(:id)
   end

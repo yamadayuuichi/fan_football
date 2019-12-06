@@ -1,0 +1,10 @@
+.wrraper.margin-top
+  %h1.topic-title
+    投稿する
+  = form_for @topic do |f|
+    .form-group
+      = f.label :title, 'タイトル'
+      = f.text_field :title, class: 'form-control'
+    .form-group
+      = f.label :text, 'テキスト'
+      = f.text_field :text, class: 'form-control'
