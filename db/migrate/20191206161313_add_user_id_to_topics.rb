@@ -1,5 +1,5 @@
 class AddUserIdToTopics < ActiveRecord::Migration[5.2]
   def change
-    add_column :topics, :user_id, :string
+    add_reference :topics, :user, foreign_key: true
   end
 end
