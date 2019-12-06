@@ -10,7 +10,12 @@ class TopicsController < ApplicationController
   end
 
   def create
-    Topic.create(title: topic_params[:title], text: topic_params[:text], user_id: current_user.id)
+    @topic = Topic.new(topic_params)
+    if @topic.save
+      redirect_to topics_path
+    else
+      redirect_to new_topic_path
+    end
   end
 
   def show
@@ -31,7 +36,7 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.permit(:title, :text)
+    params.require(:topic).permit(:title, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index
