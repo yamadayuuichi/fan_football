@@ -1,10 +1,13 @@
 .wrraper.margin-top
   %h1.topic-title
     投稿する
-  = form_for @topic do |f|
-    .form-group
-      = f.label :title, 'タイトル'
-      = f.text_field :title, class: 'form-control'
-    .form-group
-      = f.label :text, 'テキスト'
-      = f.text_field :text, class: 'form-control'
+  .row
+    .margin-0auto
+      = form_for @topic do |f|
+        .form-group
+          = f.label :title, 'タイトル', class: 'form-label'
+          = f.text_area :title, class: 'form-control'
+        .form-group
+          = f.label :text, 'テキスト', class: 'form-label'
+          = f.text_area :text, class: 'form-control'
+        = f.submit '投稿', class: 'btn blue lighten-3'
