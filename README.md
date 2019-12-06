@@ -6,6 +6,7 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
+|profile_image|string||
 
 ### Association
 
