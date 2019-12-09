@@ -1,27 +1,61 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+プロサッカーの情報や考察の投稿アプリです。
 
-Things you may want to cover:
+### 制作理由
 
-* Ruby version
+  個人的にサッカーが好きで、たくさんの人とサッカーに関する情報を共有したいと考え作ろうと思いました。
+  ※12/9現在、まだ制作中です。
 
-* System dependencies
+### 苦労している点
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Dockerでの開発環境の構築をやってみたいと思い、Dockerの勉強中です。
+  ローカル環境での構築には成功しましたが、本番環境へのデプロイはまだという段階です。
+  デプロイはECSを使って行う予定ですが、目下苦戦中です。。。
 
 
-test2
+## users
+
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+|profile_image|string||
+
+### Association
+
+- has_many :topics
+- has_many :comments
+
+## topics
+
+|Column|Type|Options|
+|------|----|-------|
+|title|string||
+|text|text||
+
+### Association
+
+- has_many :images
+- has_many :comments
+
+## images
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+
+### Association
+
+- belongs_to :topic
+
+## comments
+
+|Column|Type|Options|
+|------|----|-------|
+|comment|text||
+
+### Association
+
+- belongs_to :user
+- belongs_to :topic
